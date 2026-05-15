@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Java Blog | My Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- 近未来フォント -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== 全体 ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:
+        linear-gradient(
+            135deg,
+            #0f0f0f,
+            #1a1a1a,
+            #111827
+        );
+
+    color:#e5e7eb;
+
+    font-family: 'Noto Sans JP', sans-serif;
+
+    min-height:100vh;
+}
+
+/* ===== 背景演出 ===== */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(0,255,255,0.12),
+        transparent 30%),
+
+        radial-gradient(circle at bottom right,
+        rgba(0,140,255,0.15),
+        transparent 35%);
+
+    z-index:-1;
+}
+
+/* ===== ヘッダー ===== */
+
+header{
+    width:100%;
+
+    padding:20px 60px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(10px);
+
+    position:sticky;
+    top:0;
+
+    background:rgba(10,10,10,0.6);
+}
+
+/* ロゴ */
+
+.logo{
+    font-family:'Orbitron', sans-serif;
+
+    font-size:2rem;
+    font-weight:700;
+
+    color:#00e5ff;
+
+    letter-spacing:3px;
+
+    text-decoration:none;
+
+    text-shadow:0 0 10px rgba(0,229,255,0.7);
+}
+
+/* ナビ */
+
+nav ul{
+    display:flex;
+    gap:30px;
+
+    list-style:none;
+}
+
+nav a{
+    color:#d1d5db;
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00e5ff;
+
+    text-shadow:0 0 8px rgba(0,229,255,0.8);
+}
+
+/* ===== メイン ===== */
+
+main{
+    max-width:1000px;
+
+    margin:100px auto;
+
+    padding:0 20px;
+}
+
+/* タイトル */
+
+.blog-title{
+    font-family:'Orbitron', sans-serif;
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+    color:#ffffff;
+
+    text-shadow:
+        0 0 15px rgba(0,229,255,0.8);
+}
+
+/* サブタイトル */
+
+.blog-sub{
+    color:#9ca3af;
+
+    margin-bottom:60px;
+
+    font-size:1.1rem;
+}
+
+/* 記事カード */
+
+.article{
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    margin-bottom:40px;
+
+    backdrop-filter: blur(12px);
+
+    transition:0.4s;
+}
+
+.article:hover{
+    transform:translateY(-8px);
+
+    border-color:#00e5ff;
+
+    box-shadow:
+        0 0 20px rgba(0,229,255,0.2);
+}
+
+/* 記事タイトル */
+
+.article h2{
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+    color:#00e5ff;
+
+    font-family:'Orbitron', sans-serif;
+}
+
+/* 記事本文 */
+
+.article p{
+    line-height:2;
+
+    color:#d1d5db;
+}
+
+/* ボタン */
+
+.btn{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:14px 28px;
+
+    border:1px solid #00e5ff;
+
+    border-radius:999px;
+
+    color:#00e5ff;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#00e5ff;
+
+    color:#000;
+
+    box-shadow:
+        0 0 20px rgba(0,229,255,0.7);
+}
+
+/* ===== フッター ===== */
+
+footer{
+    text-align:center;
+
+    padding:40px;
+
+    color:#9ca3af;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+</style>
+</head>
+<body>
+<section class="article">
+
+    <div class="article-meta">
+        2026.05.15 / Java
+    </div>
+
+    <h2>
+        Java学習を始めました
+    </h2>
+
+    <p class="lead">
+        Javaについて１から学びました。
+    </p>
+
+    <div class="article-content">
+
+        <h3>■ 学習内容</h3>
+
+        <p>
+            プログラミングの準備から学び、基本的な考え方を学びました。
+        </p>
+
+        <h3>■ 難しかった部分</h3>
+
+        <p>
+            抽象クラスとインターフェースの違いに最初は苦戦しました。
+            しかし実際にコードを書くことで理解が深まってきました。
+            継承など複数のクラスを使うことに苦戦しました。
+        </p>
+
+        <pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        Animal dog = new Dog();
+
+        dog.sound();
+
+    }
+
+}
+        </code></pre>
+
+        <h3>■ 今後の目標</h3>
+
+        <p>
+            学んだことを忘れないように日常的に触ること。
+        </p>
+        
+         <a href="NewFile.html" class="btn">
+            戻る
+        </a>
+
+    </div>
+
+</section>
+</body>
